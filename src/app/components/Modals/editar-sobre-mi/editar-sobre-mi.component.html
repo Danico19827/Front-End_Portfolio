@@ -8,7 +8,9 @@
                     aria-label="Close"></button>
             </div>
             <div class="modal-body">
-
+                <button class="btn btn-primary center" (click)="cargarDatos(1)">Cargar Datos Anteriores</button>
+                <br>
+                <br>
                 <div class="input-group mb-3">
                     <span class="input-group-text"
                         id="inputGroup-sizing-default">Nombre</span>
@@ -29,12 +31,6 @@
                     <input type="text" [formControl]="descripcion"
                         class="form-control" aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-default">
-                </div>
-                <div class="input-group mb-3">
-                    <input type="file" [formControl]="foto" class="form-control"
-                        id="inputGroupFile02">
-                    <label class="input-group-text" for="inputGroupFile02">Editar
-                        Foto</label>
                 </div>
 
             </div>

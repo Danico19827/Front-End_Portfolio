@@ -15,12 +15,24 @@ export class EditarSobreMiComponent implements OnInit {
   user:Usuario = null
   nombre = new FormControl('Nicolás Daniel Taritolay', Validators.required)
   edad = new FormControl(19, Validators.required)
-  descripcion = new FormControl('Me gusta Programar', Validators.required)
+  descripcion = new FormControl('', Validators.required)
   foto = new FormControl('', Validators.required)
   
 
-  constructor(private sUsuario:UsuarioService, private router:Router, private activatedRouter:ActivatedRoute){
+  constructor(private sUsuario:UsuarioService){
     
+  }
+
+  cargarDatos(id:any){
+    this.sUsuario.find(1).subscribe(data =>{
+      this.user = data;
+      this.nombre.setValue(this.user.nombre)
+      this.edad.setValue(this.user.edad)
+      this.descripcion.setValue(this.user.descripcion)
+    }, err =>{
+      alert("Error")
+    }
+    )
   }
 
   ngOnInit(): void {
@@ -47,18 +59,11 @@ export class EditarSobreMiComponent implements OnInit {
 
   }
 
-  get fotoN():any{
-    return this.foto.value
-  }
-
-  
-
 
   actualizarUsuario(){
       this.user.descripcion= this.descripcionN
       this.user.edad = this.edadN
       this.user.nombre = this.nombreN
-      this.user.url = this.fotoN
       this.sUsuario.update(this.user).subscribe(data => {
     })
     window.location.reload()

@@ -1,0 +1,35 @@
+
+<div class="modal" id="editar-foto" tabindex="-1">
+    <form enctype="multipart/form-data">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar Información</h5>
+                    <button type="button" class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <input type="file" name="imgAdd"
+                            [formControl]="foto" class="form-control"
+                            id="inputGroupFile02">
+                        <label class="input-group-text" for="inputGroupFile02">Editar
+                            Foto</label>
+                    </div>                
+                    <div>
+                        <p>Si no se selecciona una foto, se usará una por
+                            defecto</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary"
+                            data-bs-dismiss="modal"
+                            (click)="actualizarUsuario()">Actualizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </form>
+</div>
