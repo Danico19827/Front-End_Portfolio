@@ -1,0 +1,65 @@
+<h2 class="resaltar espacio"><strong>- Habilidades: </strong></h2>
+
+<div class="espacio">
+    <div class="espacio">
+        <section class="fondo-habilidades rounded-5 espacio" id="habilidades">
+            <h3 class="espacio resaltarV3">- Algunas de mis habilidades: <i class="fa-solid fa-plus espacio resaltarV2" type="button" data-bs-toggle="modal" data-bs-target="#agregar-habilidades"></i></h3>
+            <app-agregar-habilidad></app-agregar-habilidad>
+            <div *ngFor="let habilidad of habilidad">
+            <h4 class="espacio resaltarV2" id={{habilidad.id}}>/ {{habilidad.habilidad}}: <i class="fa-solid fa-pen-to-square edit-info espacio" type="button" data-bs-toggle="modal" data-bs-target="#editar-habilidad" (click)="cargarId(habilidad.id)"></i><i class="fa-solid fa-trash-can espacio resaltarV2" type="button" (click)="eliminarHabilidad(habilidad.id)"></i></h4>
+            <app-editar-habilidad [Id]="dameElDato()"></app-editar-habilidad>
+            <app-editar-habilidad></app-editar-habilidad>
+            <div class="progress m-1">
+                    <div class="progress-bar progress-bar-striped bg-warning"
+                        role="progressbar" aria-label="Info striped example"
+                        [style.width.%]="habilidad.porcentaje" style="min-width:0%" aria-valuenow="50" aria-valuemin="0"
+                        aria-valuemax="100"></div>
+                </div>
+                <br>
+            </div>
+
+            <!-- <div>
+                <h4 class="espacio resaltarV2">/ Programar con Java:</h4>
+                <div class="progress m-1">
+                    <div class="progress-bar progress-bar-striped bg-primary"
+                        role="progressbar" aria-label="Info striped example"
+                        style="width: 90%" aria-valuenow="50" aria-valuemin="0"
+                        aria-valuemax="100"></div>
+                </div>
+                <br>
+                <h4 class="espacio resaltarV2">/ Programar C++:</h4>
+                <div class="progress m-1">
+                    <div class="progress-bar progress-bar-striped bg-info"
+                        role="progressbar" aria-label="Info striped example"
+                        style="width: 40%" aria-valuenow="50" aria-valuemin="0"
+                        aria-valuemax="100"></div>
+                </div>
+                <br>
+                <h4 class="espacio resaltarV2">/ Programar con Python:</h4>
+                <div class="progress m-1">
+                    <div class="progress-bar progress-bar-striped bg-success"
+                        role="progressbar" aria-label="Info striped example"
+                        style="width: 65%" aria-valuenow="50" aria-valuemin="0"
+                        aria-valuemax="100"></div>
+                </div>
+                <br>
+                <h4 class="espacio resaltarV2">/ Trabajo en Equipo:</h4>
+                <div class="progress m-1">
+                    <div class="progress-bar progress-bar-striped bg-danger"
+                        role="progressbar" aria-label="Info striped example"
+                        style="width: 90%" aria-valuenow="50" aria-valuemin="0"
+                        aria-valuemax="100"></div>
+                </div>
+                <br>
+                <h4 class="espacio resaltarV2">/ Responsabilidad:</h4>
+                <div class="progress m-1">
+                    <div class="progress-bar progress-bar-striped bg-warning"
+                        role="progressbar" aria-label="Info striped example"
+                        style="width: 95%" aria-valuenow="50" aria-valuemin="0"
+                        aria-valuemax="100"></div>
+                </div>
+                <br>
+            </div> -->
+        </section>
+    </div>
+</div>

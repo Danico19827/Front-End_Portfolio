@@ -1,0 +1,16 @@
+<section class="espacio resaltarV2" id="Titulos">
+    <br>
+    <div>
+        <div class="col col-sm-10 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
+            <h2 class="resaltar"><strong>- Titulos/Certificados: </strong></h2>
+            <div *ngFor="let tituloMostrar of titulo">
+                <ul>
+                    <li><strong class="resaltarV4">{{tituloMostrar.nombre}}: <a class="resaltarV3 espacio" *ngIf="tituloMostrar.tieneUrl == true" href={{tituloMostrar.url}}>Visualizar Certificado/Titulo</a></strong>
+                    </li>
+                    <h6>{{tituloMostrar.descripcion}} </h6>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

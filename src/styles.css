@@ -1,0 +1,28 @@
+body{
+    background-image: url(https://th.bing.com/th/id/R.91217bc65f8d708a44c4c1d5f302bfac?rik=Hyg2VvsaOHLgsg&pid=ImgRaw&r=0);
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
+.form-floating.mb-3, .form-floating, .espacio{
+    padding: 0.9rem;   
+}
+
+.resaltar{
+    color:chocolate;
+}
+
+.resaltarV2{
+    color: rgb(255, 255, 255);
+}
+.resaltarV3{
+    color:rgb(127, 181, 228)
+}
+
+.resaltarV4{
+    color: rgb(248, 255, 206);
+}
+
+.fondo-sobre-mi, .fondo-info{
+    background-color: rgb(255, 255, 255);
+}

@@ -1,0 +1,45 @@
+<section class="espacio resaltarV2" id="Titulos">
+    <br>
+    <div>
+        <div class="col col-sm-10 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
+            <h2 class="resaltar"><strong>- Titulos/Certificados: </strong><i
+                    class="fa-solid fa-plus espacio resaltarV2" type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#agregar-titulo"></i></h2>
+                    <app-agregar-titulos></app-agregar-titulos>
+            <div *ngFor="let tituloMostrar of titulo">
+                <ul>
+                    <li><strong class="resaltarV4">{{tituloMostrar.nombre}}: <a class="resaltarV3 espacio" *ngIf="tituloMostrar.tieneUrl == true" href={{tituloMostrar.url}}>Visualizar Certificado/Titulo</a><i
+                                class="fa-solid fa-pen-to-square edit-info
+                                espacio resaltarV2" type="button" data-bs-toggle="modal"
+                                data-bs-target="#editar-titulo" (click)="cargarId(tituloMostrar.id)"></i><i class="fa-solid
+                                fa-trash-can espacio resaltarV2" type="button"
+                                (click)="eliminarTitulo(tituloMostrar.id)"></i></strong>
+                                <app-editar-titulo [Id]="dameElDato()"></app-editar-titulo>
+                                <app-editar-titulo></app-editar-titulo>
+                    </li>
+                    <h6>{{tituloMostrar.descripcion}} </h6>
+                </ul>
+            </div>
+            <!-- Nueva versión de los titulos implementando el uso del *ngFor -->
+            <!-- Antigua versión de los titulos, escribiendo manualmente cada uno -->
+            <!-- <ul>
+                <li><strong class="resaltarV4">Titulo Secundario: </strong></li>
+                <h6>Recibí el Titulo de "Perito Mercantil" al terminar la
+                    Secundaria</h6>
+                <li><strong class="resaltarV4">Certificado de #SeProgramar:
+                    </strong></li>
+                <h6>Al terminar la primera etapa en el curso #ArgentinaPrograma
+                    consegui esté Certificado (<a class="resaltarV3"
+                        href="https://seprogramar.inti.gob.ar/inti/certificates/verify/XpqM2aT62BEUF4f-">Visualizar
+                        Certificado</a>)</h6>
+
+                <li><strong class="resaltarV4">Certificado Full Stack Developer
+                        Jr (Cursando el Programa para conseguirlo): </strong></li>
+                <h6>Actualmente estoy realizando la segunda etapa de
+                    #ArgentinaPrograma, al terminarla podré tener este
+                    Certificado</h6>
+            </ul> -->
+        </div>
+    </div>
+</section>

@@ -1,0 +1,135 @@
+body{
+    background-color: black;
+}
+
+.fondoLogo{
+    background: rgb(0,4,25);
+    background: linear-gradient(180deg, rgba(0,4,25,1) 0%, rgba(1,4,57,1) 36%, rgba(1,19,97,1) 60%, rgba(7,38,134,1) 76%, rgba(13,58,138,1) 100%);
+    height: 18rem;
+    width: 18rem;
+    border-radius: 50%;
+    position: relative;
+    border: 0.5rem solid rgb(255, 255, 255);
+}
+
+.planeta{
+    height: 5rem;
+    width: 5rem;
+    position:absolute;
+    border-radius: 50%;
+    border: 0.1rem solid black;
+}
+
+.planeta-v1{
+    top: 10%;
+    left: 22%;
+    background-size: 150%;
+    background-image: url(https://images.pexels.com/photos/7676328/pexels-photo-7676328.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    animation: rotacion 8s ease-in-out infinite alternate-reverse;
+}
+
+.anillo{
+    width: 8rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 0.2rem solid white;
+    border-top-color:transparent;
+    position: absolute;
+    top: 22%;
+    left: 14%;
+    rotate: 8deg;
+}
+
+.anillo-apoyo{
+    width: 1.6rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    border: 0.19rem solid white;
+    border-bottom-color:transparent;
+    border-right-color: transparent;
+    position: absolute;
+    top: 20.4%;
+    left: 14.5%;
+    rotate: -2deg;
+}
+
+.anillo-apoyo-v2{
+    top: 25.4%;
+    left: 50.5%;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    rotate: 15deg;
+}
+
+.meteoritos{
+    height: 0.2rem;
+    width: 0.2rem;
+    background-color: rgb(58, 57, 57);
+    border: 0.3rem solid whitesmoke;
+    border-radius: 100%;
+    position: absolute;
+    top: 5%;
+    left: 77%;
+}
+
+.estrellas{
+    height: 0.1rem;
+    width: 0.1rem;
+    border: 50%;
+    border-radius: 1rem;
+    background-color: white;
+    border-color: white;
+    position: absolute;
+    top: 10%;
+    right: 30%;
+    animation: star 6s ease-in-out infinite;
+}
+
+@keyframes star {
+    50%{
+        transform: scale(300%);
+    }
+}
+
+.stars span:nth-child(1){
+    top: 40%;
+    right: 25%;
+    animation-delay: 2s;
+}
+.stars span:nth-child(2){
+    top: 60%;
+    right: 80%;
+    animation-delay: 4s;
+}
+.stars span:nth-child(3){
+    top: 50%;
+    right: 60%;
+    animation-delay: 6s;
+}
+.stars span:nth-child(4){
+    top: 10%;
+    right: 50%;
+    animation-delay: 8s;
+}
+.stars span:nth-child(5){
+    top: 12%;
+}
+
+.planeta-v2{
+    background-size: 150%;
+    background-image: url(https://images.pexels.com/photos/3530052/pexels-photo-3530052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    height: 2rem;
+    width: 2rem;
+    top: 60%;
+    right: 30%;
+    animation: rotacion 10s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes rotacion {
+    0%{
+        transform: rotate(20deg);
+    }
+    50%{
+        transform: rotate(-20deg);
+    }
+}

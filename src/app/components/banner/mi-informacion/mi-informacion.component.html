@@ -1,0 +1,29 @@
+<section id="mi-informacion" class="about" >
+    <br>
+    <div *ngFor="let user of usuario">
+      <div class="container text-center center">
+        <div class="row center">
+          <div class="col col-sm-5 col-md-5 col-lg-3 col-xl-3 col-xxl-3">
+            
+            <img src={{user.url}} class="rounded-circle
+              w-75 borde" alt="..." title="...">
+          </div>
+          <div class="col col-sm-6 col-md-6 col-lg-9 col-xl-9 col-xxl-9 mt-3">
+            <div class="fondo-sobre-mi rounded-5">
+              <h2><strong>Mi Perfil: </strong></h2>
+              <section id="nombre">
+                <h4>Nombre: <strong>{{user.nombre}}</strong></h4>
+              </section>
+              <section id="edad">
+                <h4>Edad: <strong> {{user.edad}} años</strong></h4>
+              </section>
+              <section id="descripcion">
+                <h4>Descripción: <strong>{{user.descripcion}}</strong></h4>
+              </section>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

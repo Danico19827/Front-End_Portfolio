@@ -1,0 +1,95 @@
+<div class="modal" id="agregar-titulo" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title negro">Agregar Titulo</h5>
+                <button type="button" class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text"
+                        id="inputGroup-sizing-default">Nombre del Titulo</span>
+                    <input type="text" [formControl]="nombreTitulo"
+                        class="form-control" aria-label="Sizing
+                        example input"
+                        aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div *ngIf="nombreTitulo.touched &&
+                    nombreTitulo.errors">
+                    <p *ngIf="nombreTitulo.hasError('required')"
+                        class="text-danger"><strong>El Nombre del Titulo es
+                            requerido</strong></p>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text"
+                        id="inputGroup-sizing-default">Descripción del Titulo</span>
+                    <input type="text" [formControl]="descripcionTitulo"
+                        class="form-control" aria-label="Sizing
+                        example input"
+                        aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div *ngIf="descripcionTitulo.touched &&
+                    descripcionTitulo.errors">
+                    <p *ngIf="descripcionTitulo.hasError('required')"
+                        class="text-danger"><strong>La Descripción del Titulo es
+                            requerido</strong></p>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox"
+                        [formControl]="checkTitulo" value=""
+                        id="flexCheckChecked" checked
+                        (click)="detectar(checkTitulo.value)">
+                    <label class="form-check-label negro"
+                        for="flexCheckChecked">
+                        ¿Desea ingresar el enlace del Certificado?
+                    </label>
+                </div>
+                <br>
+                <div class="input-group mb-3">
+                    <span class="input-group-text"
+                        id="inputGroup-sizing-default">Enlace del Titulo</span>
+                    <input type="text" [formControl]="urlTitulo"
+                        class="form-control" aria-label="Sizing
+                        example input"
+                        aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div *ngIf="checkTitulo.value">
+                    <div *ngIf="urlTitulo.touched &&
+                        urlTitulo.errors">
+                        <p *ngIf="urlTitulo.hasError('required')"
+                            class="text-danger"><strong>El Enlace del Titulo es
+                                requerido</strong></p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <div *ngIf=" !(nombreTitulo?.errors ||
+                    descripcionTitulo.errors || ( checkTitulo.value &&
+                    urlTitulo.errors))">
+                    <div>
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary"
+                            data-bs-dismiss="modal"
+                            (click)="crearTitulo()">Agregar</button>
+                    </div>
+                </div>
+                <div *ngIf="(nombreTitulo?.errors ||
+                    descripcionTitulo.errors || ( checkTitulo.value &&
+                    urlTitulo.errors))">
+                    <div>
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary"
+                            data-bs-dismiss="modal" disabled
+                            (click)="crearTitulo()">Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

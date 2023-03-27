@@ -1,0 +1,4 @@
+.borde{
+    border: 50%;
+    border-image-width: 0.2rem white;
+}

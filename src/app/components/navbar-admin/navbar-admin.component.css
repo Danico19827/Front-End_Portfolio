@@ -1,0 +1,17 @@
+.fondo{
+    background-image: url(https://steamuserimages-a.akamaihd.net/ugc/875244468225544420/29FBBD530E1A069D15233C73400A4C55AFEFCD5C/);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.redes{
+    color:rgb(0, 0, 0);
+}
+
+i.fa-solid.fa-user-pen.fa-2xl:hover{
+    color: rgb(0, 90, 30);
+}
+
+.mostrar{
+    color: black;
+}

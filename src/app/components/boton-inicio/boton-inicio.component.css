@@ -1,0 +1,7 @@
+.inicio, .fa-solid.fa-house-chimney{
+    color: white;
+}
+
+.inicio, .fa-solid.fa-house-chimney:hover{
+    color: chocolate;
+}

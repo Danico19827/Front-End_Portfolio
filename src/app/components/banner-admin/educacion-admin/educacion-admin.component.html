@@ -1,0 +1,38 @@
+<section class="espacio resaltarV2" id="Educacion">
+    <br>
+    <div>
+        <div class="col col-sm-10 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
+            <h2 class="resaltar"><strong>- Educación: </strong><i
+                    class="fa-solid fa-plus espacio resaltarV2" type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#agregar-educacion"></i></h2>
+                    <app-agregar-educacion></app-agregar-educacion>
+            <ul>
+
+                <div *ngFor="let educacion of edu">
+                    <li><strong class="resaltarV4">{{educacion.tipoEducacion}}:
+                            <i class="fa-solid fa-pen-to-square edit-info
+                                espacio resaltarV2" type="button" data-bs-toggle="modal"
+                                data-bs-target="#editar-educacion"
+                                (click)="cargarId(educacion.id)"></i><i
+                                class="fa-solid fa-trash-can espacio resaltarV2"
+                                type="button"
+                                (click)="eliminarEducacion(educacion.id)"></i>
+                        </strong></li>
+                    <app-editar-educacion [Id]="dameElDato()"></app-editar-educacion>
+                    <app-editar-educacion></app-editar-educacion>
+                    <h6>{{educacion.descripcion}}</h6>
+                    <div *ngIf="educacion.tieneLogo == true">
+                        <h5 class="resaltarV3">Logo de la institución:</h5>
+                        <img class="rounded-circle"
+                            src={{educacion.logo}}
+                            width="20%">
+                        <br>
+                    </div>
+                    <br>
+                </div>
+
+            </ul>
+        </div>
+    </div>
+</section>

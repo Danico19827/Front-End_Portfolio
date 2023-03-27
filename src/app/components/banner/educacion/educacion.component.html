@@ -1,0 +1,24 @@
+<section class="espacio resaltarV2" id="Educacion">
+    <br>
+    <div>
+        <div class="col col-sm-10 col-md-9 col-lg-9 col-xl-9 col-xxl-9">
+            <h2 class="resaltar"><strong>- Educación: </strong></h2>
+            <ul>
+                <div *ngFor="let educacion of edu">
+                    <li><strong class="resaltarV4">{{educacion.tipoEducacion}}:
+                        </strong></li>
+                    <h6>{{educacion.descripcion}}</h6>
+                    <div *ngIf="educacion.tieneLogo == true">
+                        <h5 class="resaltarV3">Logo de la institución:</h5>
+                        <img class="rounded-circle"
+                            src={{educacion.logo}}
+                            width="20%">
+                        <br>
+                    </div>
+                    <br>
+                </div>
+
+            </ul>
+        </div>
+    </div>
+</section>

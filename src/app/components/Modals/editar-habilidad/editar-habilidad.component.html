@@ -1,0 +1,75 @@
+<div class="modal" id="editar-habilidad" tabindex="-1">
+    
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Editar Habilidad</h5>
+                <button type="button" class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <button class="btn btn-primary center" (click)="cargarDatos(Id)">Cargar Datos Anteriores</button>
+                <br>
+                <br>
+                <div class="input-group mb-3">
+                    <span class="input-group-text"
+                        id="inputGroup-sizing-default">Nombre de la Habilidad</span>
+                    <input type="text" [formControl]="nombreHabilidad"
+                        class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div *ngIf="nombreHabilidad?.touched &&
+                        nombreHabilidad?.errors">
+                        <p *ngIf="nombreHabilidad?.hasError('required')"
+                            class="text-danger"><strong>El nombre de la
+                                habilidad es requerido</strong></p>
+                    </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text"
+                        id="inputGroup-sizing-default">Porcentaje de la habilidad</span>
+                    <input type="number" min="0" max="100" [formControl]="porcentajeHabilidad"
+                        class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div *ngIf="porcentajeHabilidad.touched &&
+                        porcentajeHabilidad.errors">
+                        <p *ngIf="porcentajeHabilidad.hasError('required')"
+                            class="text-danger"><strong>El porcentaje es
+                                requerido</strong></p>
+                        <p *ngIf="porcentajeHabilidad.hasError('max')"
+                            class="text-danger"><strong>El porcentaje
+                                debe
+                                ser menor o igual a 100</strong></p>
+                        <p *ngIf="porcentajeHabilidad.hasError('min')"
+                            class="text-danger"><strong>El porcentaje
+                                debe
+                                ser mayor a 0</strong></p>
+                    </div>
+                
+            </div>
+            <div class="modal-footer">
+                <div *ngIf="!(nombreHabilidad.errors ||
+                    porcentajeHabilidad.errors)">
+                    <div>
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary"
+                            data-bs-dismiss="modal"
+                            (click)="buscarId(Id)">Actualizar</button>
+                    </div>
+                </div>
+                <div *ngIf=" (nombreHabilidad.errors ||
+                    porcentajeHabilidad.errors)">
+                    <div>
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary"
+                            data-bs-dismiss="modal" disabled
+                            (click)="buscarId(Id)">Actualizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+.redes{
+    color:rgb(0, 0, 0);
+}
+
+.redes:hover{
+    color: rgb(0, 90, 30);
+}
+i.fa-regular.fa-user.fa-2xl:hover{
+    color: rgb(0, 90, 30);
+}
+
+.mostrar{
+    color: black;
+}
+
+*{
+    margin: 0;
+}

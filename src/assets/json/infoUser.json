@@ -1,0 +1,54 @@
+{
+    "nombre": "Nicolás Daniel Taritolay",
+    "fotoPerfil" : "./assets/img/Foto de Perfil.jpeg",
+    "edad": 19,
+    "descripcion": "Full Stack Developer Jr",
+    "usuario": "",
+    "contraseña" : "",
+  
+    "titulos": [
+      {
+        "id": 0,
+        "nombreTitulo": "Titulo Secundario:",
+        "descripcionTitulo": "Recibí el Titulo de 'Perito Mercantil' al terminar la Secundaria"
+      },
+      {
+          "id": 1,
+          "nombreTitulo": "Certificado de #SeProgramar:",
+          "certificado" : "https://seprogramar.inti.gob.ar/inti/certificates/verify/XpqM2aT62BEUF4f-",
+          "descripcionTitulo": "Al terminar la primera etapa en el curso #ArgentinaPrograma consegui esté Certificado"
+        },
+        {
+          "id": 2,
+          "nombreTitulo": "Certificado Full Stack Developer Jr (Cursando el Programa para conseguirlo):",
+          "descripcionTitulo": "Actualmente estoy realizando la segunda etapa de #ArgentinaPrograma, al terminarla podré tener este Certificado"
+        }
+    ],
+  
+    "educacion": [
+      {
+        "id": 0,  
+        "nivel": "Primaria Completa",
+        "descripcionInstitucion": "Estudie en la Escuela Magdalena de Goyechea y Corte de Güemes Nro 410"
+      },
+      {
+          "id": 1, 
+          "nivel": "Secundaria Completa",
+          "descripcionInstitucion": "Estudie en la Secundaria Escuela Provincial de Comercio Nro 3 Jose Manuel Estrada",
+          "tituloLogo" : "Logo de la Institucion:",
+          "logoInstitucion": "https://scontent.fjuj3-1.fna.fbcdn.net/v/t31.18172-8/20728666_1477056892340344_7649640717281959738_o.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=Jb1uW57846IAX-fu-nG&_nc_ht=scontent.fjuj3-1.fna&oh=00_AfC1xJCOIPZpRCxCPTABnXFyIDVPsFBCzQNIoADlZ29SYQ&oe=63C95D0D"
+        },
+        {
+          "id": 2,
+          "nivel": "Cursando la Universidad",
+          "descripcionInstitucion": "Actualmente me encuentro cursando en la Universidad",
+          "tituloLogo" : "Logo de la Institucion:",
+          "logoInstitucion": "https://fi.unju.edu.ar/images/LOGOS-FI-UNJU/logo-fi-unju-folleteria-vertical-1071x696.jpg"
+        },
+        {
+          "id": 3,
+          "curso": "Realizando el curso #ArgentinaPrograma:",
+          "descripcionInstitucion": "En este momento me encuentro realizando la segunda etapa llamada #YoProgramo"
+        }
+    ]
+  }

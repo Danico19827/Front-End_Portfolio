@@ -1,0 +1,19 @@
+<h2 class="resaltar espacio"><strong>- Habilidades:</strong></h2>
+
+<div class="espacio">
+    <div class="espacio">
+        <section class="fondo-habilidades rounded-5 espacio" id="habilidades">
+            <h3 class="espacio resaltarV3">- Algunas de mis habilidades:</h3>
+            <div *ngFor="let habilidad of habilidad">
+            <h4 class="espacio resaltarV2">/ {{habilidad.habilidad}}:</h4>
+                <div class="progress m-1">
+                    <div class="progress-bar progress-bar-striped bg-warning"
+                        role="progressbar" aria-label="Info striped example"
+                        [style.width.%]="habilidad.porcentaje" style="min-width:0%" aria-valuenow="50" aria-valuemin="0"
+                        aria-valuemax="100"></div>
+                </div>
+                <br>
+            </div>
+        </section>
+    </div>
+</div>

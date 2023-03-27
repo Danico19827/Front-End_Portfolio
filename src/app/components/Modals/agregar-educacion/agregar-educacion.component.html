@@ -1,0 +1,94 @@
+<div class="modal" id="agregar-educacion" tabindex="-1">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title black">Agregar Educacion</h5>
+                <button type="button" class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <span class="input-group-text"
+                        id="inputGroup-sizing-default">Nombre de la Educacion</span>
+                    <input type="text" [formControl]="nombreEducacion"
+                        class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-default">
+                    <div *ngIf="nombreEducacion?.touched &&
+                        nombreEducacion?.errors">
+                        <p *ngIf="nombreEducacion?.hasError('required')"
+                            class="text-danger"><strong>El Nombre de la
+                                Institución es requerido</strong></p>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text"
+                        id="inputGroup-sizing-default">Descripción de la
+                        Educacion</span>
+                    <input type="text" [formControl]="descripcionEducacion"
+                        class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-default">
+                    <div *ngIf="descripcionEducacion?.touched &&
+                        descripcionEducacion?.errors">
+                        <p *ngIf="descripcionEducacion?.hasError('required')"
+                            class="text-danger"><strong>La Descripción de la
+                                Institución es requerido</strong></p>
+                    </div>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox"
+                        [formControl]="checkEducacion" value=""
+                        id="flexCheckChecked" checked
+                        (click)="detectar(checkEducacion.value)">
+                    <label class="form-check-label black"
+                        for="flexCheckChecked">
+                        ¿Desea ingresar el enlace del Logo?
+                    </label>
+                </div>
+                <br>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text"
+                        id="inputGroup-sizing-default">Enlace del Logo</span>
+                    <input type="text" [formControl]="enlaceEducacion"
+                        class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div *ngIf="checkEducacion.value">
+                    <div *ngIf="enlaceEducacion?.touched &&
+                        enlaceEducacion?.errors">
+                        <p *ngIf="enlaceEducacion?.hasError('required')"
+                            class="text-danger"><strong>El Enlace del logo de la
+                                Institución es requerido</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div *ngIf=" !(nombreEducacion?.errors ||
+                    descripcionEducacion?.errors || ( checkEducacion.value &&
+                    enlaceEducacion?.errors))">
+                    <div>
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary"
+                            data-bs-dismiss="modal"
+                            (click)="crearEducacion()">Agregar</button>
+                    </div>
+                </div>
+                <div *ngIf=" (nombreEducacion?.errors ||
+                    descripcionEducacion?.errors || ( checkEducacion.value &&
+                    enlaceEducacion?.errors))">
+                    <div>
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary"
+                            data-bs-dismiss="modal" disabled
+                            (click)="crearEducacion()">Agregar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

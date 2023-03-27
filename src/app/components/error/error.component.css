@@ -1,0 +1,13 @@
+.cargando{
+    animation: error 4s ease-in-out infinite alternate;
+}
+
+@keyframes error {
+    from{
+        transform: scale(90%);
+    }
+    to{
+        transform: scale(120%);
+        transform: translate(0%,20%);
+    }
+}
