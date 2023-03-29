@@ -7,8 +7,10 @@
                 proyectos realizados por mi:</h6>
             <div class="espacio">
                 <div class="list-group espacio w-50 text-center">
-                    <a href="/administrador/proyectos" class="list-group-item list-group-item-action">Ver
+                    <a href="/administrador/proyectos" routerLinkActive="active" *ngIf="logIn" class="list-group-item list-group-item-action">Ver
                         mis Proyectos</a>
+                        <a href="/administrador" routerLinkActive="active" *ngIf="!logIn" class="list-group-item list-group-item-action">Ver
+                            mis Proyectos</a>
                 </div>
             </div>
         </div>

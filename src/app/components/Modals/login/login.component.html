@@ -4,7 +4,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Iniciar Sesión</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal"
           aria-label="Close"></button>
       </div>
@@ -13,15 +13,23 @@
         <form>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Usuario</label>
-            <input type="email" class="form-control"
+            <input type="email" [formControl]="user" class="form-control"
               id="exampleInputEmail1" aria-describedby="emailHelp">
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-            <input type="password" 
+            <input type="password" [formControl]="password"
               class="form-control" id="exampleInputPassword1">
-              </div>
-          <button type="submit" class="btn btn-primary">Confirmar</button>
+          </div>
+          <div *ngIf="!activar">
+            <button type="submit" class="btn btn-primary"
+              (click)="cargarDatos()">Confirmar</button>
+          </div>
+          <div *ngIf="activar">
+            <a href="/administrador"><button type="button" class="btn
+              btn-success">Acceder</button></a>
+
+          </div>
         </form>
         <!---->
       </div>

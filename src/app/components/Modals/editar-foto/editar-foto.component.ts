@@ -30,7 +30,7 @@ export class EditarFotoComponent {
   }
 
   actualizarUsuario(){
-    if(this.foto.value.length != 0){
+    if(this.foto.value != null){
       this.user.url = this.fotoN
       this.sUsuario.update(this.user).subscribe(data => {})
       window.location.reload()

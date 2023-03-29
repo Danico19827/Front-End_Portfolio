@@ -1,3 +1,25 @@
+<div *ngIf="logIn">
 <app-navbar-admin></app-navbar-admin>
 <app-boton-admin></app-boton-admin>
 <app-introduccion-admin></app-introduccion-admin>
+</div>
+<div class="container" *ngIf="!logIn">
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col">
+            <div class="card text-center">
+                <div class="card-header">
+                    Usuario no Autorizado
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Por favor Iniciar Sesión</h5>
+                    <button class="btn btn-primary" routerLink="/index">Volver al Inicio</button>
+                </div>
+                <div class="card-footer text-body-secondary">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
