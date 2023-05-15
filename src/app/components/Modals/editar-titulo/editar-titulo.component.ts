@@ -79,8 +79,9 @@ export class EditarTituloComponent implements OnInit {
     this.titulo.tieneUrl = this.checkTituloN
     this.titulo.url = this.urlTituloN
     this.sTitulos.update(this.titulo).subscribe(data => {
+      alert("Actualizado Correctamente")
+      window.location.reload()
   })
-  window.location.reload()
  }
 
   detectar(valor:any){

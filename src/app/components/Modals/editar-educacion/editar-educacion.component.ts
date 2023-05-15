@@ -80,8 +80,10 @@ constructor(private sEducacion:EducacionService){}
     this.educ.tieneLogo = this.checkN
     this.educ.logo = this.enlaceN
     this.sEducacion.update(this.educ).subscribe(data => {
+      alert("Actualizado Correctamente")
+      window.location.reload()  
     })
-    window.location.reload()
+    
   }
 
   detectar(valor:any){

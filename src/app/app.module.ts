@@ -43,6 +43,7 @@ import { EditarTituloComponent } from './components/Modals/editar-titulo/editar-
 import { AgregarEducacionComponent } from './components/Modals/agregar-educacion/agregar-educacion.component';
 import { EditarEducacionComponent } from './components/Modals/editar-educacion/editar-educacion.component';
 import { EditarFotoComponent } from './components/Modals/editar-foto/editar-foto.component';
+import { ConfirmacionEliminarComponent } from './components/Modals/confirmacion-eliminar/confirmacion-eliminar.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { EditarFotoComponent } from './components/Modals/editar-foto/editar-foto
     EditarTituloComponent,
     AgregarEducacionComponent,
     EditarEducacionComponent,
-    EditarFotoComponent
+    EditarFotoComponent,
+    ConfirmacionEliminarComponent
   ],
   imports: [
     BrowserModule,

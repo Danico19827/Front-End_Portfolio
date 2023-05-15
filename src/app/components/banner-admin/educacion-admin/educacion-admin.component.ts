@@ -24,9 +24,15 @@ export class EducacionAdminComponent {
   }
 
   eliminarEducacion(id:any){
+    if(confirm("¿Desea eliminar el siguiente elemento?")){
+    this.sEducacion.delete(id).subscribe(data => {
+    })
     alert("Educacion Eliminada")
     window.location.reload()
-    return this.sEducacion.delete(id).subscribe(data => {}) 
+    return 0
+    }else {
+      return 0;
+    }
   }
 
   cargarId(id:any){

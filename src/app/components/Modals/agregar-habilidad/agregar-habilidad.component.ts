@@ -42,9 +42,9 @@ export class AgregarHabilidadComponent  implements OnInit{
 
   crearHabilidades(){
   const hab = new Habilidades(this.habilidadN, this.porcentajeN)
-  this.sHabilidades.save(hab).subscribe(data => {})
-  alert("Creado Correctamente")
-  window.location.reload()
+  this.sHabilidades.save(hab).subscribe(data => {
+    alert("Creado Correctamente")
+    window.location.reload()
+  })
   }
-
 }

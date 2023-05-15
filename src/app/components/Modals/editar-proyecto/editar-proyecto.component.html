@@ -1,5 +1,5 @@
 <div class="modal" id="editar-proyecto" tabindex="-1">
-    
+
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -9,6 +9,9 @@
                     aria-label="Close"></button>
             </div>
             <div class="modal-body">
+                <button class="btn btn-primary center" (click)="cargarDatos(Id)">Cargar Datos Anteriores</button>
+                <br>
+                <br>
                 <div class="input-group mb-3">
                     <span class="input-group-text"
                         id="inputGroup-sizing-default">Nombre del Proyecto</span>
@@ -16,12 +19,26 @@
                         class="form-control" aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-default">
                 </div>
+                <div *ngIf="nombreProyecto?.touched &&
+                    nombreProyecto?.errors">
+                    <p *ngIf="nombreProyecto?.hasError('required')"
+                        class="text-danger"><strong>El Nombre del Proyecto es
+                            requerido</strong></p>
+                </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text"
-                        id="inputGroup-sizing-default">Razon por la cual se realizo el Proyecto</span>
-                    <input type="text" min="0" max="100" [formControl]="razonProyecto"
+                        id="inputGroup-sizing-default">Razon por la cual se
+                        realizo el Proyecto</span>
+                    <input type="text" min="0" max="100"
+                        [formControl]="razonProyecto"
                         class="form-control" aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div *ngIf="razonProyecto?.touched &&
+                    razonProyecto?.errors">
+                    <p *ngIf="razonProyecto?.hasError('required')"
+                        class="text-danger"><strong>La Razón del Proyecto es
+                            requerido</strong></p>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text"
@@ -29,6 +46,12 @@
                     <input type="text" [formControl]="descripcionProyecto"
                         class="form-control" aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div *ngIf="descripcionProyecto?.touched &&
+                    descripcionProyecto?.errors">
+                    <p *ngIf="descripcionProyecto?.hasError('required')"
+                        class="text-danger"><strong>La Descripción del Proyecto
+                            es requerido</strong></p>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text"
@@ -38,11 +61,32 @@
                         aria-describedby="inputGroup-sizing-default">
                 </div>
             </div>
+            <div *ngIf="enlaceProyecto.touched &&
+                enlaceProyecto.errors">
+                <p *ngIf="enlaceProyecto.hasError('required')"
+                    class="text-danger"><strong>El Enlace del Proyecto es
+                        requerido</strong></p>
+            </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary"
-                    data-bs-dismiss="modal">Cancelar</button>
-                <button type="submit" class="btn btn-primary"
-                    data-bs-dismiss="modal" (click)="buscarId(Id)">Actualizar</button>
+                <div *ngIf=" !(nombreProyecto.errors || razonProyecto.errors ||
+                    descripcionProyecto.errors || enlaceProyecto.errors)">
+                    <div>
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary"
+                            data-bs-dismiss="modal" (click)="buscarId(Id)">Actualizar</button>
+                    </div>
+                </div>
+                <div *ngIf="(nombreProyecto.errors || razonProyecto.errors ||
+                    descripcionProyecto.errors || enlaceProyecto.errors)">
+                    <div>
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary"
+                            data-bs-dismiss="modal" disabled
+                            (click)="buscarId(Id)">Actualizar</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

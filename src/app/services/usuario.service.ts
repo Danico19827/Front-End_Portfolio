@@ -8,7 +8,7 @@ import { Usuario } from '../model/usuario';
 })
 export class UsuarioService {
 
-  url = "http://localhost:8080/usuario"
+  url = "https://newbackendportfolio.onrender.com/usuario"
   descripcionN: any;
 
   constructor(private httpClient:HttpClient) { }

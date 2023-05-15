@@ -17,6 +17,12 @@
                         example input"
                         aria-describedby="inputGroup-sizing-default">
                 </div>
+                <div *ngIf="nombreProyecto?.touched &&
+                    nombreProyecto?.errors">
+                    <p *ngIf="nombreProyecto?.hasError('required')"
+                        class="text-danger"><strong>El Nombre del Proyecto es
+                            requerido</strong></p>
+                </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text"
                         id="inputGroup-sizing-default">Razón por la que se hizo
@@ -26,6 +32,12 @@
                         example input"
                         aria-describedby="inputGroup-sizing-default">
                 </div>
+                <div *ngIf="razonProyecto?.touched &&
+                    razonProyecto?.errors">
+                    <p *ngIf="razonProyecto?.hasError('required')"
+                        class="text-danger"><strong>La Razón del Proyecto es
+                            requerido</strong></p>
+                </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text"
                         id="inputGroup-sizing-default">Descripción del Proyecto</span>
@@ -33,6 +45,12 @@
                         class="form-control" aria-label="Sizing
                         example input"
                         aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div *ngIf="descripcionProyecto?.touched &&
+                    descripcionProyecto?.errors">
+                    <p *ngIf="descripcionProyecto?.hasError('required')"
+                        class="text-danger"><strong>La Descripción del Proyecto
+                            es requerido</strong></p>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text"
@@ -42,13 +60,34 @@
                         example input"
                         aria-describedby="inputGroup-sizing-default">
                 </div>
+                <div *ngIf="urlProyecto?.touched &&
+                    urlProyecto?.errors">
+                    <p *ngIf="urlProyecto?.hasError('required')"
+                        class="text-danger"><strong>El Enlace del Proyecto es
+                            requerido</strong></p>
+                </div>
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary"
-                    data-bs-dismiss="modal">Cancelar</button>
-                <button type="submit" class="btn btn-primary"
-                    data-bs-dismiss="modal" (click)="crearProyecto()">Agregar</button>
+                <div *ngIf=" !(nombreProyecto.errors || razonProyecto.errors ||
+                    descripcionProyecto.errors || urlProyecto.errors)">
+                    <div>
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary"
+                            data-bs-dismiss="modal" (click)="crearProyecto()">Agregar</button>
+                    </div>
+                </div>
+                <div *ngIf="(nombreProyecto.errors || razonProyecto.errors ||
+                    descripcionProyecto.errors || urlProyecto.errors)">
+                    <div>
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary"
+                            data-bs-dismiss="modal" disabled
+                            (click)="crearProyecto()">Agregar</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

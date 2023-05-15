@@ -24,9 +24,15 @@ export class HabilidadesAdminComponent implements OnInit {
   }
 
   eliminarHabilidad(id:any){
+    if(confirm("¿Desea eliminar el siguiente elemento?")){
+    this.sHabilidades.delete(id).subscribe(data => {
+    })
     alert("Habilidad Eliminada")
     window.location.reload()
-    return this.sHabilidades.delete(id).subscribe(data => {}) 
+    return 0 
+    } else {
+      return 0
+    }
   }
 
   cargarId(id:any){

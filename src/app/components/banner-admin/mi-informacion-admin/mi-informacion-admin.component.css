@@ -1,4 +1,10 @@
 .foto{
     position: absolute;
-    color: white;
+    color: black;
+}
+
+.posicionar{
+    display: block;
+	margin: auto;
+    text-align: center;
 }

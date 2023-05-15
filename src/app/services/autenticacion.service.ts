@@ -9,7 +9,7 @@ import { Autenticacion } from '../model/autenticar';
 })
 export class AutenticacionService implements OnInit {
 
-url = "http://localhost:8080/auth"
+url = "https://newbackendportfolio.onrender.com/auth"
 valido:any
 
   constructor(private httpClient:HttpClient, private router:Router) { }

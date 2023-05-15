@@ -2,3 +2,9 @@
     border: 50%;
     border-image-width: 0.2rem white;
 }
+
+.posicionar{
+    display: block;
+	margin: auto;
+    text-align: center;
+}

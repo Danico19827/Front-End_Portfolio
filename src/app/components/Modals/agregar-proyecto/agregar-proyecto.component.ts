@@ -58,9 +58,9 @@ export class AgregarProyectoComponent {
 
   crearProyecto(){
   const proyect = new Proyectos(this.nombreProyectoN, this.descripcionProyectoN, this.razonProyectoN, this.urlProyectoN)
-  this.sProyecto.save(proyect).subscribe(data => {})
+  this.sProyecto.save(proyect).subscribe(data => {
   alert("Creado Correctamente")
-  window.location.reload()
+  window.location.reload()    
+  })
   }
-
 }

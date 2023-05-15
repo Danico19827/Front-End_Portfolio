@@ -51,14 +51,29 @@ export class EditarProyectoComponent {
     )
   }
 
+  cargarDatos(id:any){
+    this.sProyectos.find(id).subscribe(data =>{
+      this.proyect = data;
+      this.nombreProyecto.setValue(this.proyect.nombre)
+      this.razonProyecto.setValue(this.proyect.razon)
+      this.descripcionProyecto.setValue(this.proyect.descripcion)
+      this.enlaceProyecto.setValue(this.proyect.url)
+    }, err =>{
+      alert("Error")
+    }
+    )
+  }
+
+
   actualizarUsuario(){
     this.proyect.descripcion= this.descripcionN
     this.proyect.razon = this.razonN
     this.proyect.nombre = this.nombreN
     this.proyect.url = this.enlaceN
     this.sProyectos.update(this.proyect).subscribe(data => {
+      alert("Actualizado Correctamente")
+      window.location.reload()
   })
-  window.location.reload()
 }
 
 }

@@ -48,7 +48,8 @@ export class EditarHabilidadComponent {
     this.hab.habilidad= this.habilidadN
     this.hab.porcentaje= this.porcentajeN
     this.sHabilidades.update(this.hab).subscribe(data => {
+      alert("Actualizado Correctamente")
+      window.location.reload()  
   })
-  window.location.reload()
 }
 }

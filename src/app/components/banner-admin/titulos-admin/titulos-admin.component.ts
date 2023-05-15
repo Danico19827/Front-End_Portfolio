@@ -24,9 +24,14 @@ export class TitulosAdminComponent implements OnInit {
   }
 
   eliminarTitulo(id:any){
+    if(confirm("¿Desea eliminar el siguiente elemento?")){
+    this.sTitulo.delete(id).subscribe(data => {})
     alert("Titulo Eliminado")
     window.location.reload()
-    return this.sTitulo.delete(id).subscribe(data => {}) 
+    return 0 
+    } else {
+      return 0
+    }
   }
 
   cargarId(id:any){

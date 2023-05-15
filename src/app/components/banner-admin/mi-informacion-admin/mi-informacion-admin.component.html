@@ -1,33 +1,43 @@
 <section id="mi-informacion" class="about">
-    <br>
-    <div *ngFor="let user of usuario">
-      
-      <div class="container text-center center">
-                <div class="row center">
-          <div class="col col-sm-5 col-md-5 col-lg-3 col-xl-3 col-xxl-3">
-            <i class="fa-solid fa-pen-to-square foto" type="button" data-bs-toggle="modal" data-bs-target="#editar-foto"></i>
-            <img src="{{user.url}}" class="rounded-circle w-75 borde" alt="..." title="...">
+  <br>
+  <div *ngFor="let user of usuario">
+    <div class="container">
+      <div class="container text-center center fondo-sobre-mi rounded-5">
+        <div class="row">
+          <div class="col">
+            <br>
+            <i class="fa-solid fa-pen-to-square foto" type="button"
+              data-bs-toggle="modal" data-bs-target="#editar-foto"></i>
+            <img src="{{user.url}}" class="rounded-circle borde" width="300" alt="..."
+              title="...">
             <app-editar-foto></app-editar-foto>
-          </div>
-          
-          <div class="col col-sm-6 col-md-6 col-lg-9 col-xl-9 col-xxl-9 mt-3">
-          <div class="fondo-sobre-mi rounded-5">
-            
-            <h2><strong>Mi Perfil:   </strong><a><i class="fa-solid fa-pen-to-square edit-info" type="button" data-bs-toggle="modal" data-bs-target="#editar-mi-info"></i></a></h2> 
-            <app-editar-sobre-mi></app-editar-sobre-mi>
-            <section id="nombre">
-              <h4>Nombre: <strong>{{user.nombre}}</strong></h4>
-            </section>
-            <section id="edad">
-              <h4>Edad: <strong> {{user.edad}} años</strong></h4> 
-            </section>
-            <section id="descripcion">
-              <h4>Descripción: <strong> {{user.descripcion}}</strong></h4>
-            </section>
+            <br>
             <br>
           </div>
+        </div>
+        <div class="row center">
+
+          <div class="col">
+            <div>
+
+              <h2><strong>Mi Perfil: </strong><a><i class="fa-solid
+                    fa-pen-to-square edit-info" type="button"
+                    data-bs-toggle="modal" data-bs-target="#editar-mi-info"></i></a></h2>
+              <app-editar-sobre-mi></app-editar-sobre-mi>
+              <section id="nombre">
+                <h4>Nombre: <strong>{{user.nombre}}</strong></h4>
+              </section>
+              <section id="edad">
+                <h4>Edad: <strong> {{user.edad}} años</strong></h4>
+              </section>
+              <section id="descripcion">
+                <h4>Descripción: <strong> {{user.descripcion}}</strong></h4>
+              </section>
+              <br>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 </section>

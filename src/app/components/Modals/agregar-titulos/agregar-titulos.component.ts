@@ -42,9 +42,10 @@ export class AgregarTitulosComponent implements OnInit{
 
   crearTitulo(){
   const title = new Titulos(this.nombreTituloN, this.descripcionTituloN, this.urlTituloN, this.checkTituloN)
-  this.sTitulo.save(title).subscribe(data => {})
+  this.sTitulo.save(title).subscribe(data => {
   alert("Creado Correctamente")
-  window.location.reload()
+  window.location.reload()    
+  })
   }
 
   detectar(valor:any){

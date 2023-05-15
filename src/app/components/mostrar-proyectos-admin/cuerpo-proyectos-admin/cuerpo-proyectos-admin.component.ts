@@ -26,9 +26,14 @@ export class CuerpoProyectosAdminComponent {
   }
 
   eliminarProyecto(id:any){
+    if(confirm("¿Desea eliminar el siguiente elemento?")){
+    this.sProyecto.delete(id).subscribe(data => {})
     alert("Proyecto Eliminado")
     window.location.reload()
-    return this.sProyecto.delete(id).subscribe(data => {}) 
+    return 0 
+    } else {
+      return 0
+    }
   }
 
   cargarId(id:any){

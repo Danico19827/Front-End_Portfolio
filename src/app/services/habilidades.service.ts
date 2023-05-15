@@ -10,7 +10,7 @@ import { Habilidades } from '../model/habilidades';
 export class HabilidadesService {
 
 
-  url = "http://localhost:8080/habilidades"
+  url = "https://newbackendportfolio.onrender.com/habilidades"
 
   constructor(private httpClient:HttpClient) { }
 

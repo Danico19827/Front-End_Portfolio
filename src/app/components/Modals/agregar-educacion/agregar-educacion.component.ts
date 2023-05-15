@@ -47,9 +47,10 @@ export class AgregarEducacionComponent {
 
   crearEducacion(){
     const edu = new Educacion(this.nombreN, this.descripcionN, this.checkN, this.enlaceN)
-    this.sEducacion.save(edu).subscribe(data => {})
+    this.sEducacion.save(edu).subscribe(data => {
     alert("Creado Correctamente")
-    window.location.reload()
+    window.location.reload()      
+    })
   }
 
   detectar(valor:any){

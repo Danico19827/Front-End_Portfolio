@@ -13,9 +13,12 @@ export class EditarFotoComponent {
   usuario:Usuario[] = []
   user:Usuario
   foto = new FormControl(null, Validators.required)
+  fotoSub = File
+  permitir = false
 
   constructor(private sUsuario:UsuarioService){}
 
+  
   ngOnInit(): void {
     this.sUsuario.find(1).subscribe(data =>{
       this.user = data;
@@ -25,15 +28,25 @@ export class EditarFotoComponent {
     )
   }
 
-  get fotoN():any{
-    return this.foto.value
+  imagenes:any[] = []
+  capturar(event:any){
+    let archivo = event.target.files
+    let reader = new FileReader();
+    reader.readAsDataURL(archivo[0]);
+    reader.onloadend = () => {
+      console.log(reader.result)
+      this.imagenes[0] = reader.result
+      this.permitir = true
+    }
   }
 
   actualizarUsuario(){
     if(this.foto.value != null){
-      this.user.url = this.fotoN
-      this.sUsuario.update(this.user).subscribe(data => {})
-      window.location.reload()
+      this.user.url = this.imagenes[0]
+      this.sUsuario.update(this.user).subscribe(data => {
+        alert("Foto de Perfil Actualizada")
+        window.location.reload()
+      })
     } else {
       this.user.url = "../assets/img/Foto de Perfil.jpeg"
       this.sUsuario.update(this.user).subscribe(data => {})

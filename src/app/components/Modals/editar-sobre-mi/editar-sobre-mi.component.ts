@@ -61,11 +61,12 @@ export class EditarSobreMiComponent implements OnInit {
 
 
   actualizarUsuario(){
-      this.user.descripcion= this.descripcionN
-      this.user.edad = this.edadN
-      this.user.nombre = this.nombreN
-      this.sUsuario.update(this.user).subscribe(data => {
+    this.user.descripcion= this.descripcionN
+    this.user.edad = this.edadN
+    this.user.nombre = this.nombreN
+    this.sUsuario.update(this.user).subscribe(data => {
+      alert("Actualizado Correctamente")
+      window.location.reload()
     })
-    window.location.reload()
   }
 }
